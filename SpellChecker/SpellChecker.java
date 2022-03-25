@@ -8,16 +8,6 @@
  * @Date: 12/9/2021
  */
 
-/*
-    /\_____/\
-   /  o   o  \
-  ( ==  ^  == )             Have a cat!
-   )         (
-  (           )
- ( (  )   (  ) )
-(__(__)___(__)__)
- */
-
 import edu.princeton.cs.algs4.SeparateChainingHashST;
 import edu.princeton.cs.algs4.In;
 import edu.princeton.cs.algs4.StdIn;
