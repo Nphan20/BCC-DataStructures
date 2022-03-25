@@ -2,23 +2,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
-/* This is where you'll write your code to use a canonical graph-traversal algorithm to
- * solve a problem that at first may not seem like it's a graph problem at all.
- *
- * A note: This really is a fun one. If it gets to feel frustrating instead of fun, or if you feel
- * like you're  completely stuck, step back a bit and ask some questions.
- *
- * Spend a lot of time sketching out a plan, and figuring out which data structures might be
- * best for the various tasks, before you write any code at all.
- *
- * If you're not sure about how to approach this as a graph problem, feel free to ask questions.
- * (I won't give you all the answer, but...)
- * -Ben
- *
- */
-
-
-
 /*
 
     Boggle uses a 4x4 grid of characters, allowing graph based problem-solving.
@@ -27,28 +10,6 @@ import java.util.HashMap;
     of characters that can create potential words.
     The words text doc has literally from A - Z, so we either set up the trie based off of where what characters are available
     and then create our tree based off of it. - Nick
-
-       *******************************A Ben Hint**********************************
-
-At first, this problem might not look like a graph theory problem.
-However, it is possible to think of it in terms of graph theory.
-Let's treat each letter on the Boggle board as a vertex.
-This vertex is adjacent to the vertices that are adjacent to it on the board, including diagonally.
-However, there is only a valid link between a letter and the letter next to it if all the letters on the path to that
-new vertex form a valid prefix for a word or words in the word list.
-For example, "aar" would be a valid prefix, because it appears at the start of many words that appear in the list,
-including "aardvark" and "aardwolf,  "aaz" would not be a valid prefix,
-because there are no words starting with those characters in our word list.
-
-***********************************************************************************************************************
-
-From ben's sample output, it's organized from A - Z for the words, so a Trie would definitely seem to be the case
-with the use of sedgwicks code since it's recommended we don't make our own data structure (and I'm uncertain of Tries)
-
-Debugging Issues/Concerns
-
-In the sample_output_optimized_normal file, theres a word Acate found, but in the rules of boggle it says you're unable to use the same
-letter cube more than once. ***IT WAS A MISTAKE SO IT DON'T MATTER IF WE USE THIS***
 
  */
 import edu.princeton.cs.algs4.In;
@@ -108,7 +69,7 @@ public class BoggleWordFinder {
 
         if (withinRange(row, col, board)) {
             board.setVisited(row, col);
-            if(withinRange(row+1, col+1, board)) { //im not sure why it runs best like this, but it works?
+            if(withinRange(row+1, col+1, board)) { 
                 if (withinRange(row - 1, col - 1, board)) {
                     DFS(row - 1, col - 1, board, word + board.getCharAt(row - 1, col - 1), dictionary); //checks top left of position
                 }
