@@ -2,8 +2,8 @@
  * @Author Nicholas Phan
  */
 
-//Linear time = O(n) - where I believe n is the amount of Vertices
-//DFS-based algorithm - Depth First Search in slides day 17-18
+//Linear time = O(n) - n is the amount of Vertices
+//DFS-based algorithm
 //Euler Cycle, where each edge is visited exactly once, and where all vertices have an even degree.
 //To review, Edges, vertices, Degrees, cycles.
 //Edges - a connection between two vertex. If we had a vertex a & it connects to vertex b, it creates 1 edge connection
@@ -56,9 +56,6 @@ public class EulerFinder {
      */
 
     private void depthFirstSearch(Graph enteredGraph, int sourceVertex){
-
-        //I believe in DFS we can add which vertex we're in the order we're visiting each vertex
-
         count++;
         markedArray[sourceVertex] = true; //marks the current vertex we're in true, and the count incremented
         listOfVertices.add(sourceVertex); //adds the current source vertex to see where we're at
